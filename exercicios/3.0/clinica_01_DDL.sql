@@ -1,6 +1,6 @@
-CREATE DATABASE Locadora;
+CREATE DATABASE Clinica;
 
-USE Locadora;
+USE Clinica;
 
 CREATE TABLE Clinicas
 (
