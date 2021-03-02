@@ -1,6 +1,9 @@
+-- Criar o banco de dados chamado
+
 CREATE DATABASE SENAI_HROADS_TARDE;
 
 USE SENAI_HROADS_TARDE;
+-- Criar as tabelas no banco de dados
 
 CREATE TABLE Personagem
 (
@@ -33,7 +36,8 @@ CREATE TABLE Classes
 );
 
 CREATE TABLE HabiliClasses
-(	
-	idClasses	INT FOREIGN KEY REFERENCES Classes (idClasses)
-	,idHabilidades	INT FOREIGN KEY REFERENCES Habilidades (idHabilidades)
+(
+	idClasses INT FOREIGN KEY REFERENCES Classes (idClasses)
+	,idHabilidades INT FOREIGN KEY REFERENCES Habilidades (idHabilidades)
+	,Descricao VARCHAR(250)NOT NULL
 );
