@@ -20,16 +20,23 @@ INSERT INTO TiposDeHabilidades(Descricao)
 VALUES						  ('Ataque')
 							 ,('Defesa')
 							 ,('Cura')
-							 ,('Magia');
+							 ,('Magia')
+							 ,('NULL');
 
 INSERT INTO Habilidades(Descricao, idTipoHabilidades)
 VALUES			    ('Lança Mortal', 1)
 				   ,('Escudo Supremo', 2)
-				   ,('Recuperar Vida', 3);
+				   ,('Recuperar Vida', 3)
+				   ,('NULL',4);
 
 INSERT INTO HabiliClasses(Descricao, idClasses, idHabilidades)
 VALUES					 ('Bárbaro',1,1),
-						 ('Bárbaro', 1,2)
-						 ,('Cruzado', 2)
-						 ,('Caçadora de Demônios', 1)
+						 ('Bárbaro',1,2)
+						 ,('Cruzado',2,2)
+						 ,('Caçadora de Demônios',3,1)
+						 ,('Monge',4,3)
+						 ,('Monge',4,2)
+						 ,('Necromancer',5,4)
+						 ,('Feiticeiro',6,3)
+						 ,('Arcanista',7,4);
 						

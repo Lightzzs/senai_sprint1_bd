@@ -14,7 +14,15 @@ SELECT idHabilidades ,Descricao, idTipoHabilidades FROM Habilidades;
 
 SELECT * FROM TiposDeHabilidades;
 
-SELECT idClasses ,Descricao, idHabilidades FROM HabiliClasses;
+--Selecionar todos as classes
+SELECT Classes.Descricao, Habilidades.Descricao FROM Classes
+INNER JOIN HabiliClasses
+ON Classes.idClasses = HabiliClasses.idClasses
+INNER JOIN Habilidades
+ON Habilidades.idHabilidades = HabiliClasses.idHabilidades;
+
+--Selecionar somente o nome das classes
+SELECT Classes.Descricao FROM Classes;
 
 SELECT * FROM Classes;
 
@@ -43,4 +51,28 @@ SELECT idHabilidades FROM Habilidades;
 --Selecionar todos os tipos de habilidades
 SELECT * FROM Habilidades
 
+--Selecionar todas as habilidades e a quais tipos de habilidades elas fazem parte
+SELECT Habilidades.Descricao, TiposDeHabilidades.Descricao FROM Habilidades
+INNER JOIN TiposDeHabilidades
+ON Habilidades.idHabilidades = TiposDeHabilidades.idTipoHabilidades;
 
+--Selecionar todos os personagens e suas respectivas classes
+SELECT Personagem.Nome, Personagem.Classe FROM Personagem;
+
+--Selecionar todos os personagens e as classes (mesmo que elas não tenham correspondência em personagens)
+SELECT Classes.Descricao, Personagem.Nome FROM Classes
+LEFT JOIN Personagem
+ON Classes.idClasses = Personagem.idPersonagem;
+
+--Selecionar todas as classes e suas respectivas habilidades;
+SELECT Classes.Descricao, Habilidades.Descricao FROM Classes
+LEFT JOIN Habilidades
+ON Classes.idClasses = Habilidades.idHabilidades;
+
+--Selecionar todas as habilidades e suas classes (somente as que possuem correspondência)
+SELECT Classes.Descricao, Habilidades.Descricao FROM Classes
+INNER JOIN HabiliClasses
+ON Classes.idClasses = HabiliClasses.idClasses
+INNER JOIN Habilidades
+ON Habilidades.idHabilidades = HabiliClasses.idHabilidades
+WHERE Habilidades.Descricao <> 'NULL';
