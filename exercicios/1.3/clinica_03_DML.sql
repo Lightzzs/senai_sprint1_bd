@@ -20,3 +20,4 @@ ON Veterinarios.idClinica = Clinicas.idClinica
 
 SELECT Racas.Descricao FROM Racas
 WHERE Descricao LIKE 'S%'
+
